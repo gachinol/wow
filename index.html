@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#123f50">
+  <title>마을방송 · 우리 동네 이야기</title>
+  <style>
+    @font-face{font-family:"Pretendard";src:url("assets/PretendardVariable.woff2") format("woff2-variations");font-weight:45 920;font-style:normal;font-display:swap;}
+    :root{font-family:"Pretendard",system-ui,-apple-system,"Malgun Gothic",sans-serif;color:#17343b;background:#f3f6f3}*{box-sizing:border-box}body{margin:0}button,input,textarea,select{font:inherit;font-family:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #ee9b48;outline-offset:2px}.app{max-width:560px;min-height:100vh;margin:auto;background:#fff;box-shadow:0 0 32px #18394414;padding-bottom:93px}.hero{background:#123f50;color:#fff;padding:24px 22px 25px;border-radius:0 0 28px 28px}.brand{font-size:13px;font-weight:800;letter-spacing:.08em;color:#b8e1dc}.hero h1{font-size:29px;line-height:1.25;margin:15px 0 7px}.hero p{margin:0;color:#dbebec;font-size:14px}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.chip{display:inline-block;border-radius:99px;background:#e6f3ef;color:#155644;padding:6px 10px;font-size:12px;font-weight:800}.chip.red{background:#fff0e9;color:#ae421e}.section{padding:22px 20px 0}.section h2{font-size:19px;margin:0 0 13px}.muted{color:#658087;font-size:13px;line-height:1.5}.alert{border:1px solid #f3b89f;background:#fff4ee;border-radius:16px;padding:16px}.alert strong{color:#a63e20}.card{border:1px solid #dce8e5;border-radius:18px;padding:16px;margin:10px 0;background:#fff}.card h3{margin:9px 0 5px;font-size:17px}.card p{margin:0;color:#647c81;font-size:13px;line-height:1.55}.meta{font-size:12px;color:#668188}.thumb{height:130px;background:linear-gradient(130deg,#174d5b,#7eb9ac);border-radius:14px;display:grid;place-items:center;color:white;font-size:36px}.btn{border:0;border-radius:12px;background:#147866;color:#fff;padding:11px 15px;font-weight:800}.btn.secondary{background:#e7f3ef;color:#145a4b}.btn.ghost{background:#f0f4f3;color:#31555d}.btn.small{font-size:13px;padding:8px 11px}.btn:disabled{opacity:.55;cursor:not-allowed}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.program{border:1px solid #dce8e5;border-radius:15px;padding:13px;background:#f9fbfa}.program b{display:block;margin:7px 0 4px}.program span{display:block;color:#678087;font-size:12px;line-height:1.45}.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);max-width:560px;width:100%;display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-top:1px solid #dce8e5;padding:7px 5px max(7px,env(safe-area-inset-bottom));z-index:5}.nav button{border:0;background:none;color:#6a8185;font-size:11px;padding:6px 0;display:grid;justify-items:center;gap:3px}.nav button.active{color:#096451;font-weight:900}.nav span{font-size:21px}.page{display:none}.page.active{display:block}.field{display:grid;gap:6px;margin:13px 0}.field label{font-weight:800;font-size:13px}.field input,.field textarea,.field select{width:100%;border:1px solid #cbdcda;border-radius:11px;padding:11px;background:#fff;color:#17343b}.field textarea{min-height:100px;resize:vertical}.notice{border-left:4px solid #15856d;padding:11px 13px;background:#f2f8f5;margin:10px 0;border-radius:0 10px 10px 0}.notice.urgent{border-color:#d45b32;background:#fff3ed}.notice b{display:block}.notice p{margin:4px 0;font-size:13px;line-height:1.5}.empty{border:1px dashed #b9cecb;border-radius:14px;padding:22px;text-align:center;color:#688086}.tabs{display:flex;gap:7px;overflow:auto;margin:0 0 13px}.tabs button{white-space:nowrap;border:0;border-radius:99px;background:#edf3f1;color:#49666b;padding:7px 12px;font-size:12px;font-weight:800}.tabs button.active{background:#155b50;color:white}.link{color:#075e79;text-decoration:underline;overflow-wrap:anywhere}.foot{padding:28px 20px;color:#799095;font-size:11px;line-height:1.5}dialog{border:0;border-radius:20px;padding:22px;max-width:min(90vw,500px);box-shadow:0 15px 50px #123f5055}dialog::backdrop{background:#102e39aa}dialog h2{margin-top:0}video{width:100%;border-radius:12px;background:#0c2d38}#toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#183e48;color:white;padding:10px 15px;border-radius:99px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:10;white-space:nowrap;font-size:13px}#toast.show{opacity:1}@media(min-width:700px){.app{margin:30px auto;border-radius:28px;overflow:hidden;min-height:calc(100vh - 60px)}.nav{bottom:0}}
+
+    body{background:radial-gradient(circle at 50% 0,#dff7f3 0,#eef5f3 38%,#e8eeec 100%)}
+    .app{background:#fbfdfc}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(145deg,#062f50 0%,#0b4c63 55%,#0e777a 100%);padding:18px 20px 24px;border-radius:0 0 32px 32px}
+    .hero:after{content:"";position:absolute;width:230px;height:230px;border:34px solid rgba(33,199,197,.13);border-radius:50%;right:-130px;top:-90px}
+    .hero-top,.hero-copy,.hero-actions{position:relative;z-index:1}
+    .hero-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .hero-logo{width:138px;height:43px;object-fit:cover;object-position:center;background:white;border-radius:12px;padding:2px 8px}
+    .live-badge{font-size:11px;font-weight:800;color:#e8fffb;background:#ffffff18;border:1px solid #ffffff2b;border-radius:99px;padding:7px 10px}
+    .hero-copy{display:grid;grid-template-columns:1fr 132px;align-items:center;gap:8px;margin-top:12px;min-height:164px}
+    .hero-copy h1{font-size:38px;margin:6px 0 8px;letter-spacing:-.05em}.hero-copy p{max-width:270px;line-height:1.55}
+    .hero-mascot{width:150px;height:165px;object-fit:cover;object-position:50% 23%;filter:drop-shadow(0 16px 18px #001c2b66);background:#fff;border:1px solid #ffffff99;border-radius:26px;overflow:hidden}
+    .hero-actions{display:flex;gap:8px;margin-top:16px}.hero-button{flex:1;border:1px solid #ffffff3d;border-radius:13px;background:#ffffff14;color:white;padding:11px;font-weight:800}.hero-button.primary{background:#fff;color:#073953;border-color:#fff}
+    .welcome-strip{margin:18px 20px 0;padding:12px 16px 12px 5px;border:1px solid #d4e9e5;border-radius:18px;background:linear-gradient(100deg,#ecfaf7,#fff);display:flex;align-items:center;gap:10px;overflow:hidden}
+    .welcome-strip img{width:94px;height:62px;object-fit:cover;object-position:left center;mix-blend-mode:multiply}
+    .welcome-strip b,.welcome-strip span{display:block}.welcome-strip b{color:#073f58;font-size:15px}.welcome-strip span{color:#668087;font-size:12px;margin-top:4px}
+    .section h2{color:#0a3950}.btn{background:#0c7674}.nav button.active{color:#0b7775}.chip{background:#ddf5f0;color:#0d6660}.program{background:linear-gradient(145deg,#fff,#f1faf7)}
+    .branded-empty{display:grid;justify-items:center;gap:4px;background:linear-gradient(145deg,#fff,#f0faf7)}.branded-empty img{width:94px;height:82px;object-fit:cover;object-position:50% 17%;mix-blend-mode:multiply}.branded-empty b{color:#0a4556}.branded-empty span{font-size:12px}
+    @media(max-width:390px){.hero-copy{grid-template-columns:1fr 108px}.hero-mascot{width:124px}.hero-logo{width:120px}.hero-copy h1{font-size:34px}}
+
+    /* 2026-09-27 새 마을방송 브랜드 적용 */
+    body{background:radial-gradient(circle at 50% 0,#fff4dd 0,#f5f8fa 42%,#edf3f5 100%)}
+    .hero{background:linear-gradient(145deg,#145c87 0%,#258ac0 58%,#56b7dc 100%)}
+    .hero:after{border-color:rgba(255,196,42,.28)}
+    .hero-logo{width:178px;height:54px;object-fit:contain;background:transparent;border-radius:0;padding:0;filter:drop-shadow(0 3px 8px #07375655)}
+    .live-badge{color:#4c2a17;background:#ffd34f;border-color:#ffe58b}
+    .hero-copy h1{color:#fff6df;text-shadow:0 2px 0 #80451f40}
+    .hero-copy p,.brand{color:#f4fbff}
+    .hero-mascot{object-fit:cover;object-position:50% 42%;background:#fff;border:3px solid #fff;border-radius:28px;filter:drop-shadow(0 14px 18px #07426366)}
+    .hero-button.primary{color:#6a351d;background:#ffd34f;border-color:#ffd34f}.hero-button{background:#ffffff20}
+    .hero-video{display:block;aspect-ratio:1/1;object-fit:cover;object-position:center;background:#fff;pointer-events:none;user-select:none;-webkit-user-select:none}
+    .welcome-strip{background:linear-gradient(100deg,#fff8e8,#eefaff);border-color:#f3dca9}
+    .welcome-strip img{width:118px;height:58px;object-fit:contain;mix-blend-mode:normal}
+    .welcome-strip b,.section h2{color:#6b341d}.btn{background:#258ac0}.btn.secondary{background:#e7f6fc;color:#17698f}.nav button.active{color:#ec6848}.chip{background:#e6f6fd;color:#17698f}.program{background:linear-gradient(145deg,#fff,#fff7e9);border-color:#eee1c7}.notice{border-left-color:#258ac0;background:#eff9fd}
+    .branded-empty{background:linear-gradient(145deg,#fff,#fff8e9)}.branded-empty img{width:104px;height:92px;object-fit:cover;object-position:50% 35%;mix-blend-mode:normal;border-radius:22px}.branded-empty b{color:#6b341d}
+
+    .program-link{display:block;color:inherit;text-decoration:none;position:relative;border-color:#f0b84d;background:linear-gradient(145deg,#fff9e9,#eefaff)}
+    .program-link:hover{transform:translateY(-2px);box-shadow:0 8px 20px #174c6620}
+    .program-link em{display:inline-block;margin-top:9px;color:#df6043;font-size:11px;font-style:normal;font-weight:900}
+
+    .channel-list{display:grid;gap:11px;margin:14px 0 25px}
+    .channel-button{display:grid;grid-template-columns:1fr auto;gap:5px 14px;padding:16px;border:1px solid #d8e7ec;border-radius:17px;background:linear-gradient(135deg,#fffaf0,#eef9fd);color:#17343b;text-decoration:none;box-shadow:0 5px 16px #174c660c;transition:transform .15s,box-shadow .15s}
+    .channel-button:hover{transform:translateY(-2px);box-shadow:0 9px 22px #174c661c}
+    .channel-category{grid-column:1/3;color:#d65b42;font-size:11px;font-weight:900}
+    .channel-button strong{font-size:17px;color:#5d321f}.channel-button small{grid-column:1/2;color:#627b82;line-height:1.45}
+    .channel-button em{grid-column:2;grid-row:2/4;align-self:center;background:#258ac0;color:#fff;border-radius:11px;padding:9px 11px;font-size:12px;font-style:normal;font-weight:900}
+    .registered-broadcasts{border-top:1px solid #e1ebed;padding-top:20px}.registered-broadcasts h3{margin:0 0 10px;color:#60777d;font-size:14px}.compact-empty{padding:16px;font-size:12px}
+
+    .hero-mascot{width:100%;max-width:132px;justify-self:end}
+
+    .hero-logo{width:190px;height:auto;aspect-ratio:2/1;object-fit:contain;object-position:left center}
+    @media(max-width:390px){.hero-logo{width:170px;height:auto}}
+  </style>
+</head>
+<body>
+<div class="app">
+  <header class="hero">
+    <div class="hero-top"><img class="hero-logo" src="assets/village-radio-logo-color.png" alt="마을방송"><span class="live-badge">● 마을방송</span></div>
+    <div class="hero-copy"><div><span class="brand">우리 동네 이야기가 모이는 곳</span><h1>마을방송</h1><p>마을 소식과 주민의 목소리를 따뜻하게 전합니다.</p></div><video class="hero-mascot hero-video" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture tabindex="-1" aria-label="인사하는 마을방송 캐릭터"><source src="assets/village-radio-welcome.mp4" type="video/mp4"></video></div>
+    <div class="hero-actions"><button class="hero-button primary" data-go="broadcasts">방송 보기</button><button class="hero-button" data-go="participate">소식 제보하기</button></div>
+  </header>
+  <main>
+    <div id="home" class="page active">
+      <section class="welcome-strip"><img src="assets/village-radio-logo-symbol.png" alt="마을방송 로고"><div><b>마을방송에 오신 것을 환영해요!</b><span>우리 동네의 오늘을 함께 나눠요.</span></div></section><section class="section"><div class="row"><h2>긴급 알림</h2><span class="chip red">우선 안내</span></div><div id="urgent"></div></section>
+      <section class="section"><div class="row"><h2>지금 방송</h2><button class="btn secondary small" data-go="broadcasts">전체 보기</button></div><div id="featured"></div></section>
+      <section class="section"><h2>마을 소식</h2><div id="homeNotices"></div></section>
+      <section class="section"><h2>방송 프로그램</h2><div class="grid" id="programs"></div></section>
+    </div>
+    <div id="broadcasts" class="page"><section class="section"><h2>카테고리별 채널</h2><p class="muted">카테고리를 선택하면 해당 채널을 볼 수 있습니다.</p><div class="tabs" id="filters" aria-label="방송 카테고리"></div><div id="channelList" class="channel-list"></div><div class="registered-broadcasts"><h3>등록된 방송</h3><div id="broadcastList"></div></div></section></div>
+    <div id="participate" class="page"><section class="section"><h2>마을 소식 제보</h2><p class="muted">행사, 생활 정보, 방송 아이디어를 남겨 주세요. 이 시제품에서는 이 기기에만 저장됩니다.</p><form id="tipForm"><div class="field"><label for="tipType">분류</label><select id="tipType"><option>마을 소식</option><option>행사</option><option>방송 제안</option><option>생활 불편</option></select></div><div class="field"><label for="tipTitle">제목</label><input id="tipTitle" maxlength="80" required placeholder="예: 마을 청소 일정 안내"></div><div class="field"><label for="tipBody">내용</label><textarea id="tipBody" maxlength="1000" required placeholder="언제, 어디서, 어떤 일이 있는지 알려 주세요"></textarea></div><div class="field"><label for="tipName">이름 또는 별명</label><input id="tipName" maxlength="30" required placeholder="공개되지 않습니다"></div><button class="btn" type="submit">제보 저장</button></form><h2 style="margin-top:30px">내 제보</h2><div id="tipList"></div></section></div>
+    <div id="manage" class="page"><section class="section"><h2>운영자 데모</h2><p class="muted">실제 운영용 로그인과 서버가 없는 시제품입니다. 여기서 등록한 내용은 현재 브라우저에만 보입니다.</p><h3>알림 등록</h3><form id="noticeForm"><div class="field"><label for="noticeTitle">제목</label><input id="noticeTitle" required maxlength="80"></div><div class="field"><label for="noticeBody">내용</label><textarea id="noticeBody" required maxlength="500"></textarea></div><div class="field"><label for="noticeUrgent">구분</label><select id="noticeUrgent"><option value="normal">일반 소식</option><option value="urgent">긴급 알림</option></select></div><button class="btn" type="submit">알림 등록</button></form><h3 style="margin-top:32px">방송 등록</h3><form id="broadcastForm"><div class="field"><label for="broadcastTitle">방송 제목</label><input id="broadcastTitle" required maxlength="80"></div><div class="field"><label for="broadcastCategory">프로그램</label><select id="broadcastCategory"></select></div><div class="field"><label for="broadcastUrl">영상 주소</label><input id="broadcastUrl" required type="url" placeholder="https://youtu.be/... 또는 https://.../video.mp4"></div><div class="field"><label for="broadcastDescription">설명</label><textarea id="broadcastDescription" maxlength="400"></textarea></div><button class="btn" type="submit">방송 등록</button></form><button id="resetData" class="btn ghost small" style="margin-top:30px">이 기기의 데모 데이터 초기화</button></section></div>
+  </main>
+  <footer class="foot">PPT 내용을 바탕으로 만든 기능 시제품 · 실제 재난 정보는 관계 기관의 공식 안내를 확인하세요.</footer>
+</div>
+<nav class="nav" aria-label="하단 메뉴"><button class="active" data-go="home"><span>⌂</span>홈</button><button data-go="broadcasts"><span>▶</span>방송</button><button data-go="participate"><span>✎</span>참여</button><button data-go="manage"><span>⚙</span>운영</button></nav>
+<dialog id="playerDialog"><div class="row"><h2 id="playerTitle"></h2><button class="btn ghost small" id="closePlayer">닫기</button></div><div id="playerContent"></div></dialog><div id="toast" role="status"></div>
+<script>
+const CATEGORIES=[
+  {name:'라이브커머스',description:'제주의 소상공인을 위한 장',channels:[{name:'라이브커머스 채널',intro:'제주 소상공인의 상품과 이야기를 소개합니다.',url:'https://www.youtube.com/watch?v=jYuLo15WCME&t=1687s'}]},
+  {name:'마을소식',description:'마을 소식과 전시회',channels:[{name:'마을소식 채널',intro:'마을의 새로운 소식과 전시회 정보를 전합니다.',url:'https://www.youtube.com/watch?v=fknDmGSReMc&t=91s'}]},
+  {name:'문화계 소식',description:'공연 행사 등',channels:[{name:'문화계 소식 채널',intro:'제주의 공연과 행사 소식을 소개합니다.',url:'https://www.youtube.com/watch?v=cdWjsQfaXc8'}]},
+  {name:'홍보, 광고',description:'영상홍보광고',channels:[{name:'홍보·광고 채널',intro:'마을과 지역 사업자를 위한 홍보 영상을 만납니다.',url:'https://www.youtube.com/watch?v=Vy1OFyYnjuo'}]},
+  {name:'쇼폼',description:'일상이 쇼폼이다',channels:[{name:'쇼폼 채널',intro:'마을의 재미있는 일상을 짧은 영상으로 전합니다.',url:'https://www.youtube.com/shorts/jPf1Zv0ijQ8'}]},
+  {name:'A.I',description:'세상의 모든 것들',channels:[{name:'A.I 채널',intro:'인공지능으로 만나는 세상의 다양한 이야기를 전합니다.',url:'https://www.youtube.com/watch?v=rhjI85ZOCjE'}]}
+];
+const KEY='jeju-village-radio-v1';
+const initial={notices:[{id:1,title:'마을방송에 오신 것을 환영합니다',body:'우리 마을의 소식과 방송을 이곳에서 전합니다. 실제 운영 전까지 게시물은 예시입니다.',urgent:false,date:'예시'}],broadcasts:[],tips:[]};
+let data;try{data=JSON.parse(localStorage.getItem(KEY))||structuredClone(initial)}catch{data=structuredClone(initial)}
+let filter='전체';const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function save(){localStorage.setItem(KEY,JSON.stringify(data));render()}
+function toast(msg){let t=$('#toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800)}
+function date(){return new Intl.DateTimeFormat('ko-KR',{dateStyle:'medium'}).format(new Date())}
+function noticeHtml(n){return `<article class="notice ${n.urgent?'urgent':''}"><b>${n.urgent?'🚨 ':''}${esc(n.title)}</b><p>${esc(n.body)}</p><span class="meta">${esc(n.date)}</span></article>`}
+function broadcastHtml(b){return `<article class="card"><div class="thumb" aria-hidden="true">▶</div><h3>${esc(b.title)}</h3><p>${esc(b.description||'방송 영상을 시청해 보세요.')}</p><div class="row" style="margin-top:13px"><span class="chip">${esc(b.category)}</span><button class="btn small" data-play="${b.id}">시청하기</button></div></article>`}
+function render(){const urg=data.notices.filter(x=>x.urgent).slice().reverse();$('#urgent').innerHTML=urg.length?urg.map(noticeHtml).join(''):'<div class="alert"><strong>현재 등록된 긴급 알림이 없습니다.</strong><p class="muted" style="margin:5px 0 0">실제 긴급 상황에서는 공식 재난 안내를 확인하세요.</p></div>';
+const bs=data.broadcasts.slice().reverse();$('#featured').innerHTML=bs.length?broadcastHtml(bs[0]):'<div class="empty branded-empty"><img src="assets/village-radio-mascot-wave.png" alt=""><b>첫 방송을 기다리고 있어요</b><span>운영 메뉴에서 영상 주소를 등록할 수 있습니다.</span></div>';
+$('#homeNotices').innerHTML=data.notices.filter(x=>!x.urgent).slice(-3).reverse().map(noticeHtml).join('')||'<div class="empty">등록된 소식이 없습니다.</div>';
+$('#programs').innerHTML=CATEGORIES.map(c=>{const first=c.channels[0];return first?`<a class="program program-link" href="${esc(first.url)}" target="_blank" rel="noopener noreferrer"><b>${esc(c.name)}</b><span>${esc(c.description)}</span><em>영상 보기</em></a>`:`<div class="program"><b>${esc(c.name)}</b><span>${esc(c.description)}</span></div>`}).join('');
+$('#filters').innerHTML=['전체',...CATEGORIES.map(c=>c.name)].map(x=>`<button class="${x===filter?'active':''}" data-filter="${esc(x)}" aria-pressed="${x===filter}">${esc(x)}</button>`).join('');
+const selectedCategories=filter==='전체'?CATEGORIES:CATEGORIES.filter(c=>c.name===filter);
+const channels=selectedCategories.flatMap(c=>c.channels.map(ch=>({...ch,category:c.name})));
+$('#channelList').innerHTML=channels.length?channels.map(ch=>`<a class="channel-button" href="${esc(ch.url)}" target="_blank" rel="noopener noreferrer"><span class="channel-category">${esc(ch.category)}</span><strong>${esc(ch.name)}</strong><small>${esc(ch.intro)}</small><em>채널 보기</em></a>`).join(''):'<div class="empty">이 카테고리에 등록된 채널이 없습니다.</div>';
+let shown=filter==='전체'?bs:bs.filter(x=>x.category===filter);$('#broadcastList').innerHTML=shown.length?shown.map(broadcastHtml).join(''):'<div class="empty compact-empty">운영자가 추가로 등록한 방송이 없습니다.</div>';
+$('#tipList').innerHTML=data.tips.length?data.tips.slice().reverse().map(t=>`<article class="notice"><b>${esc(t.title)}</b><p>${esc(t.body)}</p><span class="meta">${esc(t.type)} · ${esc(t.date)} · 저장됨</span></article>`).join(''):'<div class="empty">아직 저장한 제보가 없습니다.</div>';
+}
+$('#broadcastCategory').innerHTML=CATEGORIES.map(c=>`<option>${esc(c.name)}</option>`).join('');
+document.addEventListener('click',e=>{const go=e.target.closest('[data-go]');if(go){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===go.dataset.go));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.go===go.dataset.go));scrollTo(0,0)}const f=e.target.closest('[data-filter]');if(f){filter=f.dataset.filter;render()}const p=e.target.closest('[data-play]');if(p)play(data.broadcasts.find(b=>String(b.id)===p.dataset.play))});
+function safeUrl(raw){try{const u=new URL(raw);return ['https:','http:'].includes(u.protocol)?u:null}catch{return null}}
+function play(b){if(!b)return;const u=safeUrl(b.url);if(!u){toast('영상 주소를 확인해 주세요');return}$('#playerTitle').textContent=b.title;const c=$('#playerContent');let id=null;if(['youtube.com','www.youtube.com','m.youtube.com'].includes(u.hostname))id=u.searchParams.get('v');if(['youtu.be','www.youtu.be'].includes(u.hostname))id=u.pathname.slice(1);if(id&&/^[\w-]{11}$/.test(id))c.innerHTML=`<iframe title="${esc(b.title)}" src="https://www.youtube-nocookie.com/embed/${id}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border:0;border-radius:12px"></iframe>`;else if(/\.(mp4|webm|ogg)$/i.test(u.pathname))c.innerHTML=`<video controls src="${esc(u.href)}"></video>`;else c.innerHTML=`<p>외부 방송 페이지에서 시청할 수 있습니다.</p><a class="link" href="${esc(u.href)}" target="_blank" rel="noopener noreferrer">방송 페이지 열기</a>`;$('#playerDialog').showModal()}
+$('#closePlayer').onclick=()=>{$('#playerDialog').close();$('#playerContent').innerHTML=''};$('#playerDialog').addEventListener('close',()=>$('#playerContent').innerHTML='');
+$('#tipForm').onsubmit=e=>{e.preventDefault();data.tips.push({id:Date.now(),type:$('#tipType').value,title:$('#tipTitle').value.trim(),body:$('#tipBody').value.trim(),name:$('#tipName').value.trim(),date:date()});save();e.target.reset();toast('이 기기에 제보를 저장했습니다')};
+$('#noticeForm').onsubmit=e=>{e.preventDefault();data.notices.push({id:Date.now(),title:$('#noticeTitle').value.trim(),body:$('#noticeBody').value.trim(),urgent:$('#noticeUrgent').value==='urgent',date:date()});save();e.target.reset();toast('알림을 등록했습니다')};
+$('#broadcastForm').onsubmit=e=>{e.preventDefault();const u=safeUrl($('#broadcastUrl').value);if(!u){toast('http 또는 https 영상 주소를 입력해 주세요');return}data.broadcasts.push({id:Date.now(),title:$('#broadcastTitle').value.trim(),category:$('#broadcastCategory').value,url:u.href,description:$('#broadcastDescription').value.trim(),date:date()});save();e.target.reset();toast('방송을 등록했습니다')};
+$('#resetData').onclick=()=>{if(confirm('이 기기의 알림, 방송, 제보 데이터를 모두 초기화할까요?')){data=structuredClone(initial);save();toast('초기화했습니다')}};render();
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
